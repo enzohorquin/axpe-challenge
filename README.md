@@ -27,6 +27,8 @@ Los problemas que detecto en la implementación son:
 
 2. Uso de forEach. Con las nuevas funcionalidades de JS, se puede utilizar funciones como [reduce] que hacen que el codigo sea mucho más legible. 
 
-3. No permite que se aplique una tarifa distinta dependiendo si el servicio es de streaming o de download, con la nueva solucion se permite que pueda haber distintas tarifas dependiendo si es un servicio de streaming o de download.
+3. Muchos if's dentro del codigo hace que sea dificil de entender y mantener el codigo.
 
-4. En caso de querer agregar nuevos servicios, simplemente se tiene que agregar un case en cada una de las funciones para obtener el precio y la comisión.
+4. Se intentó aplicar uno de los principios de SOLID es el de Single Responsibility Principle que dice que una clase debe estar encargada de realizar una tarea. 
+ Se eliminaron los If's ya que se vuelve más complejo poder agregar nuevos servicios en caso de que en un futuro se agreguen. (Open Closed principle)
+ Hay consistencia entre las clases Streaming Service y Download Service, ya que ambas tienen implementado su forma de calcular el precio del servicio.(Liskov Substitution).
