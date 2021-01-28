@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Map from './js/screens/Map/index';
 import reportWebVitals from './reportWebVitals';
+import initStore from './js/core/store';
 import { Provider } from 'react-redux';
-import initStore from './core/store';
+import './styles/main.scss';
 
 const store = initStore();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Map />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
